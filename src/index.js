@@ -8,7 +8,7 @@ import getBase64Image from './base64'
  */
 export default function initCloud(el, data, params = {}) {
   const chart = echarts.init(el)
-  var img = params.imageUrl || "/src/china.png";
+  var img = params.imageUrl || "/src/bus.jpg"; // bus GTBZ22J
   var image = new Image();
   image.crossOrigin = 'Anonymous';
   image.src = img;
@@ -20,6 +20,13 @@ export default function initCloud(el, data, params = {}) {
     series: [
       {
         type: 'wordCloud',
+        sizeRange: params.sizeRange || [6, 120], // 画布范围，如果设置太大会出现少词（溢出屏幕）
+        rotationRange: [-45, 90],//数据翻转范围
+        textPadding: 0,
+        autoSize: {
+            enable: true,
+            minSize: 6
+        },
         left: params.left || 'center',
         top: params.top || 'center',
         width: params.width || '600',

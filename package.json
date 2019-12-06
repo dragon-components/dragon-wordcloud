@@ -1,6 +1,6 @@
 {
   "name": "dragon-wordcloud",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "> test echarts",
   "main": "src/index.js",
   "scripts": {
